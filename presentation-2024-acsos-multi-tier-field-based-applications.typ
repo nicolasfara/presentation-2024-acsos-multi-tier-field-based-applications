@@ -20,9 +20,9 @@
 #set raw(tab-size: 4)
 #show raw.where(block: true): block.with(
   fill: luma(240),
-  inset: 1em,
+  inset: (x: 1.5em, y: 1em),
   radius: 0.7em,
-  width: 100%,
+  // width: 100%,
 )
 
 #show bibliography: set text(size: 0.8em)
@@ -93,13 +93,28 @@
   ]  
 ]
 
+#slide(title: "Aggregate Computing - Repeating")[
+  #side-by-side(gutter: 1em, columns: (1fr, auto))[
+    === State Evolution
+    ```scala
+    rep(0) { case prev =>
+      prev + 1
+    }
+    ```
+  ][
+    #only(1)[#figure(image("images/ac-rep-1.svg"))]
+    #only(2)[#figure(image("images/ac-rep-2.svg"))]
+    #only(3)[#figure(image("images/ac-rep-3.svg"))]
+    #only(4)[#figure(image("images/ac-rep-4.svg"))]
+  ]
+]
+
 #slide(title: "Edge-Cloud Continuum")[
   #side-by-side(gutter: 2.5em, columns: (auto, 1fr))[
     #figure(image("images/edge-cloud-continuum.svg", height: 100%))
   ][
-      TODO
+    TODO
   ]
-
 ]
 
 #new-section-slide("Motivation")
