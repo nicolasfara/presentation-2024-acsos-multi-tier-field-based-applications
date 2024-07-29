@@ -12,17 +12,19 @@
 #show math.equation: set text(font: "Fira Math")
 #set strong(delta: 200)
 #set par(justify: true)
+#set list(spacing: 1.9em)
 
 #set quote(block: true)
 #show quote: set align(left)
 #show quote: set pad(x: 2em, y: -0.8em)
 
 #set raw(tab-size: 4)
+#show raw: set text(size: 0.9em)
 #show raw.where(block: true): block.with(
   fill: luma(240),
-  inset: (x: 1.5em, y: 1em),
+  inset: (x: 1em, y: 1em),
   radius: 0.7em,
-  // width: 100%,
+  width: 100%,
 )
 
 #show bibliography: set text(size: 0.8em)
@@ -76,7 +78,6 @@
     ][
       #figure(image("images/channel-sim.png", width: 76%))
     ]
-
   ][
     === Programming Model
 
@@ -93,19 +94,82 @@
   ]  
 ]
 
-#slide(title: "Aggregate Computing - Repeating")[
-  #side-by-side(gutter: 1em, columns: (1fr, auto))[
-    === State Evolution
-    ```scala
-    rep(0) { case prev =>
-      prev + 1
+#slide(title: "Aggregate Computing")[
+  #underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") enables the definition *collective* applications leveraging:
+
+  #side-by-side(columns: (2fr, auto))[
+      - *spatial* and *temporal* operators
+      - every device executes the *same program*
+      - resilient *coordination* mechanisms
+      - *proximity-based* interaction (neighbours)
+  ][
+    #align(right)[
+      #figure(image("images/scr-result.png", height: 55%))
+    ]
+    // #figure(image("images/channel-sim.png", width: 42%))
+  ]
+  #quote[Shfit from a #underline[device-centric] to a #alert[collective-centric] view of the system.]
+]
+
+#slide(title: "Field Calculus")[
+  The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") inspired by physical concepts like magnetic fields.
+
+  A *Field* is a mapping from each #underline[device] to some #underline[local value].
+
+  // #v(1em)
+
+  #side-by-side(columns: (auto, auto, auto, auto))[
+    === Function
+    ```
+     
+    b(e1,...,en)
+     
+    ```
+  ][
+    === State evolution
+    ```
+    rep(x <- v) {
+      s1;...;sn
     }
     ```
   ][
-    #only(1)[#figure(image("images/ac-rep-1.svg"))]
-    #only(2)[#figure(image("images/ac-rep-2.svg"))]
-    #only(3)[#figure(image("images/ac-rep-3.svg"))]
-    #only(4)[#figure(image("images/ac-rep-4.svg"))]
+    === Value propagation
+    ```
+     
+    nbr(s)
+     
+    ```
+  ][
+    === Restriction
+    ```
+    if(e){s1;...;sn}
+    else{s1';...;sn'}
+     
+    ```
+  ]
+]
+
+#slide(title: "Self-org Computational Model")[
+  #alert[Behaviour:] _repeated_ execution with #underline[async rounds] \
+  #alert[Interaction:] _repeated_ *neighbours* #underline[messages exchange]
+
+  #line(length: 100%, stroke: 0.05em + rgb("#23373b"))
+
+  #only(1)[
+    1. Receiving #alert[messages] from neighbours
+    #figure(image("images/ac-messages-perception.svg"))
+  ]
+  #only(2)[
+    2. Computation of the #alert[macro-program] against the received messages
+    #figure(image("images/ac-computation.svg"))
+  ]
+  #only(3)[
+    3. Sending to neighbours the #alert[computed messages]
+    #figure(image("images/ac-messages-propagation.svg"))
+  ]
+  #only(4)[
+    4. Sleep until next #alert[round...]
+    #figure(image("images/ac.svg"))
   ]
 ]
 
