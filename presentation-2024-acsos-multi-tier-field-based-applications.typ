@@ -19,7 +19,7 @@
 #show quote: set pad(x: 2em, y: -0.8em)
 
 #set raw(tab-size: 4)
-#show raw: set text(size: 0.9em)
+#show raw: set text(size: 0.8em)
 #show raw.where(block: true): block.with(
   fill: luma(240),
   inset: (x: 1em, y: 1em),
@@ -59,47 +59,47 @@
 
 #new-section-slide("Background")
 
-#slide(title: "Aggregate Computing")[
-  #place(right, dx: -17em)[
-    #line(start: (19.5em, 0em), end: (19.5em, 88%), stroke: 0.05em + rgb("#23373b"))
-  ]
-  #side-by-side(gutter: 1em, columns: (1fr, auto))[
-    === Self-org Computational Model
+// #slide(title: "Aggregate Computing")[
+//   #place(right, dx: -17em)[
+//     #line(start: (19.5em, 0em), end: (19.5em, 88%), stroke: 0.05em + rgb("#23373b"))
+//   ]
+//   #side-by-side(gutter: 1em, columns: (1fr, auto))[
+//     === Self-org Computational Model
 
-    #text(size: 0.85em)[#alert[Interaction:] _repeated_ *neighbours* msg exchange] \
-    #text(size: 0.85em)[#alert[Behaviour:] _repeated_ execution with #underline[async rounds]]
+//     #text(size: 0.85em)[#alert[Interaction:] _repeated_ *neighbours* msg exchange] \
+//     #text(size: 0.85em)[#alert[Behaviour:] _repeated_ execution with #underline[async rounds]]
 
-    === Collective Abstractions
+//     === Collective Abstractions
 
-    #text(size: 0.85em)[#alert[Abstraction:] *computational fields*] $("dev" #math.arrow #math.bb("V"))$
+//     #text(size: 0.85em)[#alert[Abstraction:] *computational fields*] $("dev" #math.arrow #math.bb("V"))$
 
-    #side-by-side(columns: (auto, auto))[
-      #figure(image("images/scr-result.png", width: 88%))
-    ][
-      #figure(image("images/channel-sim.png", width: 76%))
-    ]
-  ][
-    === Programming Model
+//     #side-by-side(columns: (auto, auto))[
+//       #figure(image("images/scr-result.png", width: 88%))
+//     ][
+//       #figure(image("images/channel-sim.png", width: 76%))
+//     ]
+//   ][
+//     === Programming Model
 
-    #text(size: 0.85em)[#alert[Formal Language:] Field Calculus] \
-    #text(size: 0.85em)[#alert[Paradigm:] Functional, Macro-programming]
-    #v(0.4em)
-    #figure(image("images/channel.svg", height: 50%))
-  ]
+//     #text(size: 0.85em)[#alert[Formal Language:] Field Calculus] \
+//     #text(size: 0.85em)[#alert[Paradigm:] Functional, Macro-programming]
+//     #v(0.4em)
+//     #figure(image("images/channel.svg", height: 50%))
+//   ]
 
-  #quote[
-    #align(center)[
-      #text(size: 1em)[Typical deployments on #alert[_flat_] and #alert[_homogeneous_] device networks.]
-    ]
-  ]  
-]
+//   #quote[
+//     #align(center)[
+//       #text(size: 1em)[Typical deployments on #alert[_flat_] and #alert[_homogeneous_] device networks.]
+//     ]
+//   ]  
+// ]
 
 #slide(title: "Aggregate Computing")[
   #underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") enables the definition *collective* applications leveraging:
 
   #side-by-side(columns: (2fr, auto))[
       - *spatial* and *temporal* operators
-      - every device executes the *same program*
+      - *macroprogramming* abstractions
       - resilient *coordination* mechanisms
       - *proximity-based* interaction (neighbours)
   ][
@@ -112,11 +112,13 @@
 ]
 
 #slide(title: "Field Calculus")[
-  The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") inspired by physical concepts like magnetic fields.
+  The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") inspired by physical concepts.
 
-  A *Field* is a mapping from each #underline[device] to some #underline[local value].
+  A *Field* is a mapping from each #underline[device] to some #underline[local value] $("dev" #math.arrow #math.bb("V"))$.
 
-  // #v(1em)
+  Fields are built and manipulated using four *program constructs:*
+
+  #v(1em)
 
   #side-by-side(columns: (auto, auto, auto, auto))[
     === Function
@@ -142,11 +144,32 @@
   ][
     === Restriction
     ```
-    if(e){s1;...;sn}
-    else{s1';...;sn'}
+    if(e) {s1;...;sn}
+    else {s1';...;sn'}
      
     ```
   ]
+]
+
+#slide(title: "Aggregate Programming")[
+
+  #side-by-side(columns: (2fr, auto))[
+    == Field Composition
+    ```scala
+    def channel(source: Boolean, destination: Boolean): Boolean {
+      val toSource = gradient(source) // Field[Double]
+      val toDestination = gradient(destination) // Field[Double]
+      val distance = distanceTo(source, destination)
+      (toSource + toDestination - distance) <= 10
+    }
+    ```
+  ][
+    #figure(image("images/channel.svg", height: 50%))
+  ]
+
+  #v(1em)
+
+  #align(center)[(_collective_) functions take *fields* as #alert[input] and return *field* as #alert[output].]
 ]
 
 #slide(title: "Self-org Computational Model")[
