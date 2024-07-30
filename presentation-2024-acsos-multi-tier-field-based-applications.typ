@@ -151,27 +151,6 @@
   ]
 ]
 
-#slide(title: "Aggregate Programming")[
-
-  #side-by-side(columns: (2fr, auto))[
-    == Field Composition
-    ```scala
-    def channel(source: Boolean, destination: Boolean): Boolean {
-      val toSource = gradient(source) // Field[Double]
-      val toDestination = gradient(destination) // Field[Double]
-      val distance = distanceTo(source, destination)
-      (toSource + toDestination - distance) <= 10
-    }
-    ```
-  ][
-    #figure(image("images/channel.svg", height: 50%))
-  ]
-
-  #v(1em)
-
-  #align(center)[(_collective_) functions take *fields* as #alert[input] and return *field* as #alert[output].]
-]
-
 #slide(title: "Self-org Computational Model")[
   #alert[Behaviour:] _repeated_ execution with #underline[async rounds] \
   #alert[Interaction:] _repeated_ *neighbours* #underline[messages exchange]
@@ -194,6 +173,27 @@
     4. Sleep until next #alert[round...]
     #figure(image("images/ac.svg"))
   ]
+]
+
+#slide(title: "Aggregate Programming")[
+
+  #side-by-side(columns: (2fr, auto))[
+    == Field Composition
+    ```scala
+    def channel(source: Boolean, destination: Boolean): Boolean {
+      val toSource = gradient(source) // Field[Double]
+      val toDestination = gradient(destination) // Field[Double]
+      val distance = distanceTo(source, destination)
+      (toSource + toDestination - distance) <= 10
+    }
+    ```
+  ][
+    #figure(image("images/channel.svg", height: 50%))
+  ]
+
+  #v(1em)
+
+  #align(center)[(_collective_) functions take *fields* as #alert[input] and return *field* as #alert[output].]
 ]
 
 #slide(title: "Edge-Cloud Continuum")[
