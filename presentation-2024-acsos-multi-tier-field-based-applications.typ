@@ -187,24 +187,55 @@
       (toSource + toDestination - distance) <= 10
     }
     ```
+
+    (_collective_) functions take *fields* as #alert[input] and return *field* as #alert[output].
   ][
     #figure(image("images/channel.svg", height: 50%))
   ]
 
   #v(1em)
 
-  #align(center)[(_collective_) functions take *fields* as #alert[input] and return *field* as #alert[output].]
-]
-
-#slide(title: "Edge-Cloud Continuum")[
-  #side-by-side(gutter: 2.5em, columns: (auto, 1fr))[
-    #figure(image("images/edge-cloud-continuum.svg", height: 100%))
-  ][
-    TODO
+  #align(center)[
+    The entire (_macro_-)program is executed by #alert[all the devices] in the network, \
+    assuming that each device *can* execute the program.
   ]
 ]
 
+#slide(title: "Edge-Cloud Continuum")[
+  #side-by-side(gutter: 2em, columns: (2fr, auto))[
+    #quote[Aggregation of #alert[computational resources] along the data path from the *edge* to the *cloud* #fcite("DBLP:journals/access/MoreschiniPLNHT22")]
+
+    #v(1em)
+
+    We must deal with different #alert[capabilities] and #alert[constraints]:
+    - edge devices for #underline[sense/acting], but *resources-constrained*
+    - cloud instances for #underline[scalability], but *latency/privacy* issues
+  ][
+    #figure(image("images/edge-cloud-continuum.svg", height: 65%))
+  ]
+
+  // #align(center)[
+  //   The #alert[opportunistic] use of the _continuum_ offers new possibilities, \
+  //   but requires fexible #alert[deployment] strategies.
+  // ]
+]
+
 #new-section-slide("Motivation")
+
+#slide(title: "Motivation")[
+  Traditionally, *AC* programs are deployed on #alert[each physical device] of the application.
+
+  Two main #underline[limitations]:
+  1. *resource-constrained* devices cannot satisfy all the requirements
+  2. available *infrastructure* is not exploited to its full potential (performance vs cost)
+
+  Previous work #fcite("FARABEGOLI2024") tried to partition the AC execution model,
+  but do not consider the the *modularity* at the macro-program level.
+]
+
+#slide(title: "Different Service Requirements")[
+  #figure((image("images/macro-program-requirements.svg", width: 70%)))
+]
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
 
