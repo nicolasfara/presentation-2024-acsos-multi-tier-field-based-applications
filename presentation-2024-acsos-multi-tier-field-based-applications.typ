@@ -215,7 +215,7 @@
     - edge devices for #underline[sense/acting], but *resources-constrained*
     - cloud instances for #underline[scalability], but *latency/privacy* issues
   ][
-    #figure(image("images/edge-cloud-continuum.svg", height: 65%))
+    #figure(image("images/edge-cloud-continuum.svg", height: 80%))
   ]
 
   // #align(center)[
@@ -243,8 +243,8 @@
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
 
-#slide(title: "System Model")[
-
+#slide(title: "System Model - Physical System")[
+  / Physical System: network of _physical devices_ $#math.delta #math.in bold("D")_italic(P)$, exchanging messages according to _physical neighbourhood_ relation $#math.cal("N")_P$.
 ]
 
 #slide(title: "Macro-programming Model")[
