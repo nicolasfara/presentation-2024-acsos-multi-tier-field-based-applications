@@ -36,11 +36,15 @@
   footnote(cite(form: "full", label(clabel)))
 }
 
+#let mail(email) = {
+  text(size: 1.3em)[#raw(email)]
+}
+
 #let authors = block(inset: 0.1em)[
   #table(inset: 0.5em, stroke: none, columns: (auto, 4fr),  align: (left, left),
-    [#alert[*Nicolas Farabegoli*]], [`nicolas.farabegoli@unibo.it`],
-    [Mirko Viroli], [`mirko.viroli@unibo.it`],
-    [Roberto Casadei], [`roby.casadei@unibo.it`],
+    [#alert[*Nicolas Farabegoli*]], [#mail("nicolas.farabegoli@unibo.it")],
+    [Mirko Viroli], [#mail("mirko.viroli@unibo.it")],
+    [Roberto Casadei], [#mail("roby.casadei@unibo.it")],
   )
   #place(right, dy:-1em)[
     #figure(image("images/disi.svg", width:40%))
