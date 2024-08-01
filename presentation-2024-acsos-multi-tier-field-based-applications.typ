@@ -261,6 +261,17 @@
   ]
 ]
 
+#slide(title: "System model: infrastructural devices")[
+  / Infrastructural devices: subset of the _physical devices_ $#math.bold("D")_I #math.subset.eq #math.bold("D")_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
+
+  #only(1)[#figure(image("images/infrastructural-devices.svg", width: 73%))]
+  #only(2)[
+    #figure(image("images/infrastructural-devices-hybrid.svg", width: 73%))
+
+    #align(center)[A _physical deivce_ can be both an #alert[application device] and an #alert[infrastructural device].]
+  ]
+]
+
 #slide(title: "Macro-programming Model")[
 
 ]
