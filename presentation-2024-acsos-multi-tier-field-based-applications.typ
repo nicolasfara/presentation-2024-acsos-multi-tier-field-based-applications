@@ -243,8 +243,22 @@
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
 
-#slide(title: "System Model - Physical System")[
-  / Physical System: network of _physical devices_ $#math.delta #math.in bold("D")_italic(P)$, exchanging messages according to _physical neighbourhood_ relation $#math.cal("N")_P$.
+#slide(title: "System model: physical system")[
+  / Physical system: network of #alert[physical devices] $#math.delta #math.in bold("D")_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $#math.cal("N")_P$.
+
+  #figure(image("images/physical-system.svg", width: 73%))
+]
+
+#slide(title: "System model: macro-program and application devices")[
+  / Application logic: it is captured by a #alert[macro-program] $#math.mono("MP")$.
+  / Application devices: subset of the physical devices $#math.bold("D")$ that execute the $#math.mono("MP")$.
+
+  #only(1)[#figure(image("images/application-devices.svg", width: 73%))]
+  #only(2)[
+    #figure(image("images/application-devices-neighbourhood.svg", width: 73%))
+
+    #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $#math.cal("N")_P$.]
+  ]
 ]
 
 #slide(title: "Macro-programming Model")[
