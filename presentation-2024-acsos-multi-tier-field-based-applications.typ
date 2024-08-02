@@ -272,8 +272,21 @@
   ]
 ]
 
-#slide(title: "Macro-programming Model")[
+#slide(title: "System model: sensors and actuators")[
+  / Sensors and actuators: a device is assumed to have #alert[sensors] and #alert[actuators] to interact with the local environment.
 
+  #figure(image("images/sensors-actuators.svg", width: 73%))
+]
+
+#slide(title: "Macro-programming Model")[
+  #side-by-side(columns: (2fr, 1fr), gutter: 1.5em)[
+    / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] --- $#math.mono("MP")\(#math.overline(math.mono("C")), #math.overline(math.mono("B"))\)$
+    / Component: atomic functional macro-program taking a list of #alert[inputs] and producing an #alert[output] --- $#math.mono("C")$
+    / Port: property of each _component_ throught which the #alert[values] are recevided and produced (inputs and output of a function) --- $#math.mono("p")$
+    / Binding: indicates that the #alert[output port] of a component is connected to the #alert[input port] of other components --- $#math.italic("component")\(#math.mono("p"), #math.mono("C"), #math.overline(math.mono("p")))$
+  ][
+    #figure(image("images/partitioned-macro-program.svg", width: 95%))
+  ]
 ]
 
 #slide(title: "Execution Model (semantics)")[
