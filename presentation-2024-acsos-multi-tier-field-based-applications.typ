@@ -289,6 +289,35 @@
   ]
 ]
 
+#slide(title: "Macro-programming Model: Local vs Collective Components")[
+  #side-by-side(columns: (2fr, auto), gutter: 1.5em)[
+    / Local component: just a transformation of #alert[local inputs] to #alert[local outputs].
+    / Collective component: requires the interaction with _instances_ of the #alert[same component] in *neighbours*.
+  ][
+    #figure(image("images/collective-local-components.svg", height: 80%))
+  ] 
+]
+
+#slide(title: "Application and Deployment Model")[
+  #side-by-side(columns: (2fr, auto), gutter: 1.5em)[
+    // The macro-program $#math.mono("MP")$ is executed  by a $#math.bold("D")$ set of #alert[application devices].
+
+    // Typically the $#math.mono("C")^j_i$ component is executed on the $#math.delta _j$ device (called #alert[owner]).
+
+    // There may be conditions *preventing the execution* of the $#math.mono("C")^j_i$ component on the owner device (e.g., _lack sensor/actuators_, _computational capabilities_, ...).
+
+    Not all the $#math.mono("C")^j_i$ components *can be executed* by the $#math.delta _j$ device (e.g., _lack sensor/actuators_, _computational capabilities_, _non-functional requirements_, ...).
+
+    In such cases, the $#math.mono("C")^j_i$ is offloaded to an *infrastructural device* (#alert[surrogate]).
+  ][
+    #figure(image("images/offloading-surrogate.svg", height: 80%))
+  ]
+
+  #align(center)[
+    The offloading can be *iterative* determining a #alert[forward chain] involving multiple devices.
+  ]
+]
+
 #slide(title: "Execution Model (semantics)")[
 
 ]
