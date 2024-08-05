@@ -319,21 +319,53 @@
 ]
 
 #slide(title: "Execution model: asyncronous round")[
-  Each #underline[component] is #alert[independently executable], and its behaviour is organised in #alert[rounds].
+  #only(1)[
+    Each #underline[component] is #alert[independently executable], and its behaviour is organised in #alert[rounds].
 
-  #underline[Outputs] of rounds at each component generate #alert[message] to be shipped.
+    #underline[Outputs] of rounds at each component generate #alert[message] to be shipped.
+  ]
+  #only(2)[
+    The #alert[main goals] of this execution model are (#underline[formalised in the paper]):
+    - #alert[deployment independent] macro-program specification
+    - #alert[self-stabilising] #fcite("DBLP:journals/tomacs/ViroliABDP18") property is preserved w.r.t. the "monolithic" deployment
+  ]
 
-  #figure(image("images/message-propagation.svg", height: 67%))
+  #figure(image("images/message-propagation.svg", height: 52%))
 ]
 
 #new-section-slide("Evaluation")
 
-#slide(title: "Experimental Setup")[
-
+#slide(title: "Evaluation goals")[
+  The evaluation aims at:
+  1. Validating the provided implementation toolchain and the proposed approach to test and #alert[simulate heterogeneous deployments]
+  2. Validating the ability of the system to converge to a stable state #alert[equal] to the one obtained in a monolithic deployment
+  3. Showcase the benefits of the proposal w.r.t. #alert[non-functional aspects] like low energy consumption
 ]
 
-#slide(title: "Results")[
+#slide(title: "Experimental setup")[
+  We setup #underline[three] incremental complex self-organising behaviours:
 
+  1. *Gradient*: computation of the distances from a source to all the other devies
+  2. *SCR*: an implementation of the _self-organising coordination regions_ pattern for splitting the network into sub-regions for handling problems in sub-spaces
+  3. *Rescue scenario*: a city event scenario where people participate into the event and when an emergency occurs, a rescue team intervenes to help the people
+]
+
+#slide(title: "Results: gradient convergence")[
+  #figure(image("images/gradient_convergence.svg"))
+  #figure(image("images/gradient_convergence_error.svg"))
+]
+
+#slide(title: "Results: SCR convergence")[
+  #figure(image("images/scr_convergence.svg"))
+  #figure(image("images/scr_convergence_error.svg"))
+]
+
+#slide(title: "Results: rescue scenario")[
+  #figure(image("images/power_consumption_modularisation.svg"))
+
+  #align(center)[
+    The #alert[modularisation] of the macro-program allows to #alert[reduce] the #alert[energy consumption] of the devices, but more messages are exchanged.
+  ]
 ]
 
 #new-section-slide("Conclusions")
