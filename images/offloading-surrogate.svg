@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="170.88214mm"
-   height="175.43332mm"
-   viewBox="0 0 170.88214 175.43333"
+   width="184.42764mm"
+   height="165.51428mm"
+   viewBox="0 0 184.42764 165.5143"
    version="1.1"
    id="svg1"
    sodipodi:docname="offloading-surrogate.svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.6190108"
-     inkscape:cx="-142.06205"
-     inkscape:cy="274.24153"
+     inkscape:zoom="1.2550963"
+     inkscape:cx="260.53778"
+     inkscape:cy="233.44822"
      inkscape:window-width="3440"
      inkscape:window-height="1358"
      inkscape:window-x="0"
@@ -118,7 +118,7 @@
   </defs>
   <g
      id="layer1"
-     transform="translate(3.1501123,61.14833)">
+     transform="translate(0.13423356,56.510169)">
     <path
        style="fill:none;fill-opacity:0.501961;stroke:#21373b;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 44.816215,93.463923 v 9.325457"
@@ -667,7 +667,7 @@
        inkscape:path-effect="#path-effect3"
        sodipodi:type="rect"
        d="M 8.9782958,-53.131599 H 76.452487 a 13.229167,13.229167 45 0 1 13.229167,13.229167 V 99.619229 A 13.229167,13.229167 135 0 1 76.452487,112.8484 H 8.9782958 A 13.229167,13.229167 45 0 1 -4.2508712,99.619229 V -39.902432 a 13.229167,13.229167 135 0 1 13.229167,-13.229167 z"
-       transform="translate(2.1007589,0.43659206)" />
+       transform="matrix(0.937125,0,0,0.937125,4.7864891,2.3139389)" />
     <path
        style="fill:none;stroke:#1f3333;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1"
        id="rect3-0"
@@ -711,37 +711,37 @@
        r="1.477252" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#1f3333;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 100.97673,14.178875 c 0,17.597753 4.74688,40.091261 14.018,40.091261"
+       d="m 100.97591,16.112332 c 0,17.597753 4.7477,38.157804 14.01882,38.157804"
        id="path30"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;opacity:1;fill:none;fill-opacity:1;stroke:#1f3333;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="141.82156"
+       x="150.28812"
        y="56.977524"
        id="text31"><tspan
          sodipodi:role="line"
          id="tspan31"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1f3333;fill-opacity:1;stroke:none;stroke-width:0.3"
-         x="141.82156"
-         y="56.977524">Forward Chain</tspan></text>
+         x="150.28812"
+         y="56.977524">Forward Reference</tspan></text>
     <circle
        style="opacity:1;fill:#1f3333;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path31"
-       cx="100.97591"
-       cy="14.178875"
+       cx="100.96175"
+       cy="16.112331"
        r="0.6230424" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;opacity:1;fill:#1f3333;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        x="44.943153"
-       y="-56.745667"
+       y="-50.39566"
        id="text32"><tspan
          sodipodi:role="line"
          id="tspan32"
          style="stroke-width:0.2"
          x="44.943153"
-         y="-56.745667">Application Device</tspan></text>
+         y="-50.39566">Application Device</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;opacity:1;fill:#1f3333;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -761,10 +761,10 @@
        id="text34"><tspan
          sodipodi:role="line"
          id="tspan34"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444444px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.2"
          x="137.30635"
          y="-44.706585">(<tspan
-   style="font-style:normal;-inkscape-font-specification:'Fira Sans, Normal';font-family:'Fira Sans';font-weight:normal;font-stretch:normal;font-variant:normal;font-size:5.64444444px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
    id="tspan35">surrogate</tspan>)</tspan></text>
   </g>
 </svg>

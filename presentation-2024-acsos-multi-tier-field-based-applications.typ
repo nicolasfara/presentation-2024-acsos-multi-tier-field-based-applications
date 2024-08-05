@@ -298,7 +298,7 @@
   ] 
 ]
 
-#slide(title: "Application and Deployment Model")[
+#slide(title: "Application and deployment model")[
   #side-by-side(columns: (2fr, auto), gutter: 1.5em)[
     // The macro-program $#math.mono("MP")$ is executed  by a $#math.bold("D")$ set of #alert[application devices].
 
@@ -310,7 +310,7 @@
 
     In such cases, the $#math.mono("C")^j_i$ is offloaded to an *infrastructural device* (#alert[surrogate]).
   ][
-    #figure(image("images/offloading-surrogate.svg", height: 80%))
+    #figure(image("images/offloading-surrogate.svg", height: 75%))
   ]
 
   #align(center)[
@@ -318,8 +318,12 @@
   ]
 ]
 
-#slide(title: "Execution Model (semantics)")[
+#slide(title: "Execution model: asyncronous round")[
+  Each #underline[component] is #alert[independently executable], and its behaviour is organised in #alert[rounds].
 
+  #underline[Outputs] of rounds at each component generate #alert[message] to be shipped.
+
+  #figure(image("images/message-propagation.svg", height: 67%))
 ]
 
 #new-section-slide("Evaluation")
