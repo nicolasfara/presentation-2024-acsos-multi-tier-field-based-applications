@@ -116,7 +116,7 @@
 ]
 
 #slide(title: "Field Calculus")[
-  The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") inspired by physical concepts.
+  The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") is inspired by physical concepts.
 
   A *Field* is a mapping from each #underline[device] to some #underline[local value] $("dev" #math.arrow #math.bb("V"))$.
 
@@ -234,7 +234,7 @@
   2. available *infrastructure* is not exploited to its full potential (performance vs cost)
 
   Previous work #fcite("FARABEGOLI2024") tried to partition the AC execution model,
-  but do not consider the the *modularity* at the macro-program level.
+  but do not consider the *modularity* at the macro-program level.
 ]
 
 #slide(title: "Different Service Requirements")[
@@ -282,7 +282,7 @@
   #side-by-side(columns: (2fr, 1fr), gutter: 1.5em)[
     / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] --- $#math.mono("MP")\(#math.overline(math.mono("C")), #math.overline(math.mono("B"))\)$
     / Component: atomic functional macro-program taking a list of #alert[inputs] and producing an #alert[output] --- $#math.mono("C")$
-    / Port: property of each _component_ throught which the #alert[values] are recevided and produced (inputs and output of a function) --- $#math.mono("p")$
+    / Port: property of each _component_ through which the #alert[values] are received and produced (inputs and output of a function) --- $#math.mono("p")$
     / Binding: indicates that the #alert[output port] of a component is connected to the #alert[input port] of other components --- $#math.italic("component")\(#math.mono("p"), #math.mono("C"), #math.overline(math.mono("p")))$
   ][
     #figure(image("images/partitioned-macro-program.svg", width: 95%))
@@ -345,9 +345,9 @@
 #slide(title: "Experimental setup")[
   We setup #underline[three] incremental complex self-organising behaviours:
 
-  1. *Gradient*: computation of the distances from a source to all the other devies
+  1. *Gradient*: computation of the distances from a source to all the other devices
   2. *SCR*: an implementation of the _self-organising coordination regions_ pattern for splitting the network into sub-regions for handling problems in sub-spaces
-  3. *Rescue scenario*: a city event scenario where people participate into the event and when an emergency occurs, a rescue team intervenes to help the people
+  3. *Rescue scenario*: a city event scenario where people participate in the event and when an emergency occurs, a rescue team intervenes to help the people
 ]
 
 #slide(title: "Results: gradient convergence")[
