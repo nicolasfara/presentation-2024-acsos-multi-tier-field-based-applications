@@ -333,6 +333,14 @@
   #figure(image("images/message-propagation.svg", height: 52%))
 ]
 
+#slide(title: "Rescue scenario: macro-program")[
+  #figure(image("images/rescue-scenario.svg"))
+]
+
+#slide(title: "Rescue scenario: deployment example")[
+  #figure(image("images/rescue-scenario-deployment.svg"))
+]
+
 #new-section-slide("Evaluation")
 
 #slide(title: "Evaluation goals")[
