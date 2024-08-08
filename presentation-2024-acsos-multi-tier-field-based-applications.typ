@@ -27,7 +27,7 @@
   width: 100%,
 )
 
-#show bibliography: set text(size: 0.8em)
+#show bibliography: set text(size: 0.7em)
 #show footnote.entry: it => {
   block(inset: (x: 2em, y: 0.1em))[#text(size: 0.75em)[#it.note.body]]
 }
