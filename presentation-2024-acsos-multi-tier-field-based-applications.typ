@@ -333,7 +333,7 @@
   #figure(image("images/message-propagation.svg", height: 52%))
 ]
 
-#slide(title: "Rescue scenario: macro-program")[
+#slide(title: "Rescue scenario: partitioned macro-program")[
   #figure(image("images/rescue-scenario.svg"))
 ]
 
