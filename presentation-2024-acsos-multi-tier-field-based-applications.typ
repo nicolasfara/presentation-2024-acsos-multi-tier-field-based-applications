@@ -19,7 +19,7 @@
 #show quote: set pad(x: 2em, y: -0.8em)
 
 #set raw(tab-size: 4)
-#show raw: set text(size: 0.8em)
+#show raw: set text(size: 0.7em)
 #show raw.where(block: true): block.with(
   fill: luma(240),
   inset: (x: 1em, y: 1em),
@@ -27,7 +27,7 @@
   width: 100%,
 )
 
-#show bibliography: set text(size: 0.7em)
+#show bibliography: set text(size: 0.75em)
 #show footnote.entry: it => {
   block(inset: (x: 2em, y: 0.1em))[#text(size: 0.75em)[#it.note.body]]
 }
@@ -112,7 +112,7 @@
     ]
     // #figure(image("images/channel-sim.png", width: 42%))
   ]
-  #quote[Shfit from a #underline[device-centric] to a #alert[collective-centric] view of the system.]
+  #quote[Shift from a #underline[device-centric] to a #alert[collective-centric] view of the system.]
 ]
 
 #slide(title: "Field Calculus")[
