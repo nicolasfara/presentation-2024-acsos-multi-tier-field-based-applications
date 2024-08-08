@@ -9,7 +9,7 @@
 )
 
 #set text(font: "Fira Sans", weight: 350, size: 20pt)
-#show math.equation: set text(font: "Fira Math")
+#show math.equation: set text(font: "New Computer Modern Math")
 #set strong(delta: 200)
 #set par(justify: true)
 #set list(spacing: 1.9em)
@@ -63,43 +63,8 @@
 
 #new-section-slide("Background")
 
-// #slide(title: "Aggregate Computing")[
-//   #place(right, dx: -17em)[
-//     #line(start: (19.5em, 0em), end: (19.5em, 88%), stroke: 0.05em + rgb("#23373b"))
-//   ]
-//   #side-by-side(gutter: 1em, columns: (1fr, auto))[
-//     === Self-org Computational Model
-
-//     #text(size: 0.85em)[#alert[Interaction:] _repeated_ *neighbours* msg exchange] \
-//     #text(size: 0.85em)[#alert[Behaviour:] _repeated_ execution with #underline[async rounds]]
-
-//     === Collective Abstractions
-
-//     #text(size: 0.85em)[#alert[Abstraction:] *computational fields*] $("dev" #math.arrow #math.bb("V"))$
-
-//     #side-by-side(columns: (auto, auto))[
-//       #figure(image("images/scr-result.png", width: 88%))
-//     ][
-//       #figure(image("images/channel-sim.png", width: 76%))
-//     ]
-//   ][
-//     === Programming Model
-
-//     #text(size: 0.85em)[#alert[Formal Language:] Field Calculus] \
-//     #text(size: 0.85em)[#alert[Paradigm:] Functional, Macro-programming]
-//     #v(0.4em)
-//     #figure(image("images/channel.svg", height: 50%))
-//   ]
-
-//   #quote[
-//     #align(center)[
-//       #text(size: 1em)[Typical deployments on #alert[_flat_] and #alert[_homogeneous_] device networks.]
-//     ]
-//   ]  
-// ]
-
 #slide(title: "Aggregate Computing")[
-  #underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") enables the definition *collective* applications leveraging:
+  #underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") enables the definition of *collective* applications leveraging:
 
   #side-by-side(columns: (2fr, auto))[
       - *spatial* and *temporal* operators
@@ -115,45 +80,45 @@
   #quote[Shift from a #underline[device-centric] to a #alert[collective-centric] view of the system.]
 ]
 
-#slide(title: "Field Calculus")[
-  The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") is inspired by physical concepts.
+// #slide(title: "Field Calculus")[
+//   The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") is inspired by physical concepts.
 
-  A *Field* is a mapping from each #underline[device] to some #underline[local value] $("dev" #math.arrow #math.bb("V"))$.
+//   A *Field* is a mapping from each #underline[device] to some #underline[local value] $("dev" #math.arrow #math.bb("V"))$.
 
-  Fields are built and manipulated using four *program constructs:*
+//   Fields are built and manipulated using four *program constructs:*
 
-  #v(1em)
+//   #v(1em)
 
-  #side-by-side(columns: (auto, auto, auto, auto))[
-    === Function
-    ```
+//   #side-by-side(columns: (auto, auto, auto, auto))[
+//     === Function
+//     ```
      
-    b(e1,...,en)
+//     b(e1,...,en)
      
-    ```
-  ][
-    === State evolution
-    ```
-    rep(x <- v) {
-      s1;...;sn
-    }
-    ```
-  ][
-    === Value propagation
-    ```
+//     ```
+//   ][
+//     === State evolution
+//     ```
+//     rep(x <- v) {
+//       s1;...;sn
+//     }
+//     ```
+//   ][
+//     === Value propagation
+//     ```
      
-    nbr(s)
+//     nbr(s)
      
-    ```
-  ][
-    === Restriction
-    ```
-    if(e) {s1;...;sn}
-    else {s1';...;sn'}
+//     ```
+//   ][
+//     === Restriction
+//     ```
+//     if(e) {s1;...;sn}
+//     else {s1';...;sn'}
      
-    ```
-  ]
-]
+//     ```
+//   ]
+// ]
 
 #slide(title: "Self-org Computational Model")[
   #alert[Behaviour:] _repeated_ execution with #underline[async rounds] \
@@ -174,7 +139,7 @@
     #figure(image("images/ac-messages-propagation.svg"))
   ]
   #only(4)[
-    4. Sleep until next #alert[round...]
+    4. Sleep until next #alert[round]...
     #figure(image("images/ac.svg"))
   ]
 ]
@@ -244,25 +209,25 @@
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
 
 #slide(title: "System model: physical system")[
-  / Physical system: network of #alert[physical devices] $#math.delta #math.in bold("D")_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $#math.cal("N")_P$.
+  / Physical system: network of #alert[physical devices] $#math.delta #math.in upright(bold("D"))_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $cal(N)_P$.
 
   #figure(image("images/physical-system.svg", width: 73%))
 ]
 
 #slide(title: "System model: macro-program and application devices")[
-  / Application logic: it is captured by a #alert[macro-program] $#math.mono("MP")$.
-  / Application devices: subset of the physical devices $#math.bold("D")$ that execute the $#math.mono("MP")$.
+  / Application logic: it is captured by a #alert[macro-program] $mono("MP")$.
+  / Application devices: subset of the physical devices $upright(bold("D"))$ that execute the $mono("MP")$.
 
   #only(1)[#figure(image("images/application-devices.svg", width: 73%))]
   #only(2)[
     #figure(image("images/application-devices-neighbourhood.svg", width: 73%))
 
-    #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $#math.cal("N")_P$.]
+    #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $cal(N)_P$.]
   ]
 ]
 
 #slide(title: "System model: infrastructural devices")[
-  / Infrastructural devices: subset of the _physical devices_ $#math.bold("D")_I #math.subset.eq #math.bold("D")_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
+  / Infrastructural devices: subset of the _physical devices_ $upright(bold("D"))_I #math.subset.eq upright(bold("D"))_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
 
   #only(1)[#figure(image("images/infrastructural-devices.svg", width: 73%))]
   #only(2)[
@@ -280,10 +245,10 @@
 
 #slide(title: "Macro-programming Model")[
   #side-by-side(columns: (2fr, 1fr), gutter: 1.5em)[
-    / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] --- $#math.mono("MP")\(#math.overline(math.mono("C")), #math.overline(math.mono("B"))\)$
-    / Component: atomic functional macro-program taking a list of #alert[inputs] and producing an #alert[output] --- $#math.mono("C")$
-    / Port: property of each _component_ through which the #alert[values] are received and produced (inputs and output of a function) --- $#math.mono("p")$
-    / Binding: indicates that the #alert[output port] of a component is connected to the #alert[input port] of other components --- $#math.italic("component")\(#math.mono("p"), #math.mono("C"), #math.overline(math.mono("p")))$
+    / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] --- $mono("MP")\(overline(mono("C")), overline(mono("B"))\)$
+    / Component: atomic functional macro-program taking a list of #alert[inputs] and producing an #alert[output] --- $mono("C")$
+    / Port: property of each _component_ through which the #alert[values] are received and produced (inputs and output of a function) --- $mono("p")$
+    / Binding: indicates that the #alert[output port] of a component is connected to the #alert[input port] of other components --- $italic("component")\(mono("p"), mono("C"), overline(mono("p")))$
   ][
     #figure(image("images/partitioned-macro-program.svg", width: 95%))
   ]
@@ -343,12 +308,12 @@
 
 #new-section-slide("Evaluation")
 
-#slide(title: "Evaluation goals")[
-  The evaluation aims at:
-  1. Validating the provided implementation toolchain and the proposed approach to test and #alert[simulate heterogeneous deployments]
-  2. Validating the ability of the system to converge to a stable state #alert[equal] to the one obtained in a monolithic deployment
-  3. Showcase the benefits of the proposal w.r.t. #alert[non-functional aspects] like low energy consumption
-]
+// #slide(title: "Evaluation goals")[
+//   The evaluation aims at:
+//   1. Validating the provided implementation toolchain and the proposed approach to test and #alert[simulate heterogeneous deployments]
+//   2. Validating the ability of the system to converge to a stable state #alert[equal] to the one obtained in a monolithic deployment
+//   3. Showcase the benefits of the proposal w.r.t. #alert[non-functional aspects] like low energy consumption
+// ]
 
 #slide(title: "Experimental setup")[
   We setup #underline[three] incremental complex self-organising behaviours:
