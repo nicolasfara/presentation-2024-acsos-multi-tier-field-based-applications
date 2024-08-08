@@ -379,7 +379,16 @@
 #new-section-slide("Conclusions")
 
 #slide(title: "Conclusions and Future Work")[
+  We addressed the problem of #underline[multi-component] macro-program #alert[execution] and #alert[deployment] in the *ECC*, improving operational flexibility.
 
+  We proved both #underline[formally] and #underline[empirically] that the proposed approach preserves the same #alert[functional] behaviour of the monolithic counterpart, showing #alert[non-functional] benefits.
+
+  *Future work*:
+
+   - Support #alert[dynamic] deployments and #alert[reconfiguration]
+   - Introduce #alert[capabilities] to constrain the components' execution
+   - Integrates the approach with tools like #alert[kubernetes] to achieve *real deployments*
+   - Exploit the *FaaS* paradigm for components offloading and execution
 ]
 
 #focus-slide("Thank you for your attention!")
