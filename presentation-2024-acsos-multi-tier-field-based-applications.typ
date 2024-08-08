@@ -193,13 +193,15 @@
 
 #slide(title: "Motivation")[
   Traditionally, *AC* programs are deployed on #alert[each physical device] of the application.
+  #side-by-side(columns: (2fr, auto), gutter: 1.5em)[
+    Two main #underline[limitations]:
+    1. *resource-constrained* devices cannot satisfy all the components' requirements
+    2. available *infrastructure* is not exploited to its full potential (performance vs cost)
 
-  Two main #underline[limitations]:
-  1. *resource-constrained* devices cannot satisfy all the requirements
-  2. available *infrastructure* is not exploited to its full potential (performance vs cost)
-
-  Previous work #fcite("FARABEGOLI2024") tried to partition the AC execution model,
-  but do not consider the *modularity* at the macro-program level.
+    Previous work #fcite("FARABEGOLI2024") tried to partition the AC execution model but did not consider the *modularity* at the macro-program level.
+  ][
+    #figure(image("images/ac-monolithic-motivation.svg", height: 68%))
+  ]
 ]
 
 #slide(title: "Different Service Requirements")[
@@ -319,7 +321,7 @@
   We setup #underline[three] incremental complex self-organising behaviours:
 
   1. *Gradient*: computation of the distances from a source to all the other devices #fcite("DBLP:journals/computer/BealPV15")
-  2. *SCR*: an implementation of the #alert[self-organising coordination regions] #fcite("DBLP:journals/fgcs/PianiniCVN21") pattern for splitting the network into sub-regions for handling problems in sub-spaces
+  2. *SCR*: an implementation of the #alert[_self-organising coordination regions_] #fcite("DBLP:journals/fgcs/PianiniCVN21") pattern for splitting the network into sub-regions for handling problems in sub-spaces
   3. *Rescue scenario*: a city event scenario where people participate in the event and when an emergency occurs, a rescue team intervenes to help the people
 ]
 
