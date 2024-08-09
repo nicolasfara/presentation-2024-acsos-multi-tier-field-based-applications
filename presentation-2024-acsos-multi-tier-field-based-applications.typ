@@ -287,17 +287,39 @@
 
 #slide(title: "Execution model: asyncronous round")[
   #only(1)[
-    Each #underline[component] is #alert[independently executable], and its behaviour is organised in #alert[rounds].
+    Each #underline[component] is #alert[independently executable].
+    
+    Its behaviour is organised in #alert[rounds].
 
     #underline[Outputs] of rounds at each component generate #alert[message] to be shipped.
+
+    #figure(image("images/message-propagation.svg", height: 52%))
+  ]
+    // The #alert[main goals] of this execution model are (#underline[formalised in the paper]):
+    // - #alert[deployment independent] macro-program specification
+    // - #alert[self-stabilising] #fcite("DBLP:journals/tomacs/ViroliABDP18") property is preserved w.r.t. the "monolithic" deployment
+
+]
+
+#slide(title: "Deployment independence of self-stabilising computations")[
+  #only(1)[
+    === Theorem 1 (Self-stabilisation)
+
+    #quote[
+      Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment],
+      then, if _(i)_ all components implement #alert[self-stabilising] computation,
+      and _(ii)_ sensor state is #alert[uniform] across all the #underline[forward chains],
+      then the behaviour observed at the #underline[global output ports] is #alert[self-stabilising],
+      independently from the #alert[deployment].
+    ]
   ]
   #only(2)[
-    The #alert[main goals] of this execution model are (#underline[formalised in the paper]):
-    - #alert[deployment independent] macro-program specification
-    - #alert[self-stabilising] #fcite("DBLP:journals/tomacs/ViroliABDP18") property is preserved w.r.t. the "monolithic" deployment
+    === Proof based on operational semantics
+    - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per #fcite("DBLP:journals/tomacs/ViroliABDP18")
+    - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
+    - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#super[4] of components
+    - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travel from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
   ]
-
-  #figure(image("images/message-propagation.svg", height: 52%))
 ]
 
 #slide(title: "Rescue scenario: partitioned macro-program")[
