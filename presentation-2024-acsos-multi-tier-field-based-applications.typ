@@ -349,17 +349,25 @@
 ]
 
 #slide(title: "Results: gradient convergence")[
-  #figure(image("images/gradient_convergence.svg"))
-  #figure(image("images/gradient_convergence_error.svg"))
+  #figure(image("images/gradient_convergence.svg", width: 80%))
+  #figure(image("images/gradient_convergence_error.svg", width: 80%))
+  
+  #align(center)[
+    When $t = 900$ the network stabilises, and the output converge to #alert[the same result].
+  ]
 ]
 
 #slide(title: "Results: SCR convergence")[
-  #figure(image("images/scr_convergence.svg"))
-  #figure(image("images/scr_convergence_error.svg"))
+  #figure(image("images/scr_convergence.svg", width: 80%))
+  #figure(image("images/scr_convergence_error.svg", width: 80%))
+
+  #align(center)[
+    When $t = 900$ the network stabilises, and the output converge to #alert[the same result].
+  ]
 ]
 
 #slide(title: "Results: rescue scenario")[
-  #figure(image("images/power_consumption_modularisation.svg"))
+  #figure(image("images/power_consumption.svg"))
 
   #align(center)[
     The #alert[modularisation] of the macro-program allows to #alert[reduce] the #alert[energy consumption] of the devices, but more messages are exchanged.
