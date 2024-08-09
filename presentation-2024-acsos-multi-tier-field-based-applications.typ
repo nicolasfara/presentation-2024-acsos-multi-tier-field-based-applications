@@ -303,7 +303,7 @@
 
 #slide(title: "Deployment independence of self-stabilising computations")[
   #only(1)[
-    === Theorem 1 (Self-stabilisation)
+    == Theorem 1 (Self-stabilisation)
 
     #quote[
       Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment],
@@ -314,11 +314,12 @@
     ]
   ]
   #only(2)[
-    === Proof based on operational semantics
+    == Proof based on operational semantics
+
     - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per #fcite("DBLP:journals/tomacs/ViroliABDP18")
     - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
     - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#super[4] of components
-    - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travel from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
+    - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travels from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
   ]
 ]
 
