@@ -353,7 +353,7 @@
   #figure(image("images/gradient_convergence_error.svg", width: 80%))
   
   #align(center)[
-    When $t = 900$ the network stabilises, and the output converge to #alert[the same result].
+    When $t = 900$ the network stabilises, and the output converges to #alert[the same result].
   ]
 ]
 
@@ -362,7 +362,7 @@
   #figure(image("images/scr_convergence_error.svg", width: 80%))
 
   #align(center)[
-    When $t = 900$ the network stabilises, and the output converge to #alert[the same result].
+    When $t = 900$ the network stabilises, and the output converges to #alert[the same result].
   ]
 ]
 
