@@ -1,5 +1,8 @@
 #import "@preview/polylux:0.3.1": *
 #import "@preview/fontawesome:0.1.0": *
+#import "@preview/ctheorems:1.1.2": *
+
+#show: thmrules
 
 #import themes.metropolis: *
 
@@ -9,6 +12,7 @@
 )
 
 #set text(font: "Fira Sans", weight: 350, size: 20pt)
+#set enum(numbering: "(i)")
 #show math.equation: set text(font: "New Computer Modern Math")
 #set strong(delta: 200)
 #set par(justify: true)
@@ -50,6 +54,11 @@
     #figure(image("images/disi.svg", width:40%))
   ]
 ]
+
+// #set heading(numbering: "1")
+#show: thmrules.with(qed-symbol: " ")
+#let theorem = thmbox("theorem", "Theorem", fill: rgb("#EDA7200F"))
+#let proof = thmproof("proof", "Proof")
 
 #title-slide(
   title: [
@@ -303,23 +312,22 @@
 
 #slide(title: "Deployment independence of self-stabilising computations")[
   #only(1)[
-    == Theorem 1 (Self-stabilisation)
+    #theorem(number: "1", "Self-stabilisation")[
+      Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment], then, if:
 
-    #quote[
-      Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment],
-      then, if _(i)_ all components implement #alert[self-stabilising] computation,
-      and _(ii)_ sensor state is #alert[uniform] across all the #underline[forward chains],
-      then the behaviour observed at the #underline[global output ports] is #alert[self-stabilising],
-      independently from the #alert[deployment].
+      + all components implement #alert[self-stabilising] computation, and
+      + sensor state is #alert[uniform] across all the #underline[forward chains]
+
+      then the result behaviour observed at the #underline[global output ports] is #alert[self-stabilising], independently from the #alert[deployment] (same result of the *monolithic* deployment).
     ]
   ]
   #only(2)[
-    == Proof based on operational semantics
-
-    - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per #fcite("DBLP:journals/tomacs/ViroliABDP18")
-    - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
-    - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#super[4] of components
-    - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travels from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
+    #proof("(base on operational semantics)")[
+      - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per #fcite("DBLP:journals/tomacs/ViroliABDP18")
+      - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
+      - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#super[4] of components
+      - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travels from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
+    ]
   ]
 ]
 
