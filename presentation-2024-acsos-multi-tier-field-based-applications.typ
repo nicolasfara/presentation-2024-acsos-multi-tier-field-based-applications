@@ -351,7 +351,7 @@
 #slide(title: "Experimental setup")[
   We setup #underline[three] incremental complex self-organising behaviours:
 
-  1. *Gradient*: computation of the distances from a source to all the other devices #fcite("DBLP:journals/computer/BealPV15")
+  1. *Gradient*: computation of the distances from a source to all the other devices // #fcite("DBLP:journals/computer/BealPV15")
   2. *SCR*: an implementation of the #alert[_self-organising coordination regions_] #fcite("DBLP:journals/fgcs/PianiniCVN21") pattern for splitting the network into sub-regions for handling problems in sub-spaces
   3. *Rescue scenario*: a city event scenario where people participate in the event and when an emergency occurs, a rescue team intervenes to help the people
 ]
