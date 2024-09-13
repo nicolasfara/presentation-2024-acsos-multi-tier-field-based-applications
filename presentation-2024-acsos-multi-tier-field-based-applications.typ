@@ -128,6 +128,8 @@
 
     This function computes the distance from a #alert[source]
     device to all the other devices in the network.
+
+    More complex *collective* components are built leveraging the #alert[gradient] function.
   ][
     #only(1)[
       #figure(image("images/gradient-1.svg"))
