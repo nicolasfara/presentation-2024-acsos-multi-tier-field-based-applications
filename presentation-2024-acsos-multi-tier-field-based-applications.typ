@@ -448,9 +448,9 @@
   *Future work*:
 
   - Introduce #alert[capabilities] to constrain the components' execution
-   - Support #alert[dynamic] deployments and #alert[reconfiguration] (also with *AI* techniques)
-   - Integrates the approach with tools like #alert[kubernetes] to achieve *real deployments*
-   - Exploit the *FaaS* paradigm for components offloading and execution
+  - Support #alert[dynamic] deployments and #alert[reconfiguration] (also with *AI* techniques)
+  - Integrates the approach with tools like #alert[kubernetes] to achieve *real deployments*
+  - Exploit the *FaaS* paradigm for components offloading and execution
 ]
 
 #focus-slide("Thank you for your attention!")
