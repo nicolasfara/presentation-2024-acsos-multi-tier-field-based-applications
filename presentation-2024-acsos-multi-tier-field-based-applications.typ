@@ -23,7 +23,7 @@
 #show quote: set pad(x: 2em, y: -0.8em)
 
 #set raw(tab-size: 4)
-#show raw: set text(size: 0.7em)
+#show raw: set text(size: 0.75em)
 #show raw.where(block: true): block.with(
   fill: luma(240),
   inset: (x: 1em, y: 1em),
@@ -72,84 +72,125 @@
 
 #new-section-slide("Background")
 
-#slide(title: "Aggregate Computing")[
-  #underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") enables the definition of *collective* applications leveraging:
-
+#slide(title: "Collective Self-organising Applications")[
+  A single program $mono("P")$ describes the *collective self-org* behavior of the system, using:
   #side-by-side(columns: (2fr, auto))[
+    - *macroprogramming* abstractions
       - *spatial* and *temporal* operators
-      - *macroprogramming* abstractions
-      - resilient *coordination* mechanisms
-      - *proximity-based* interaction (neighbours)
+    - *proximity-based* interaction (neighbours)
+    - resilient *coordination* mechanisms
   ][
     #align(right)[
-      #figure(image("images/scr-result.png", height: 55%))
+      #figure(image("images/scr-result.png", height: 44%))
     ]
     // #figure(image("images/channel-sim.png", width: 42%))
   ]
   #quote[Shift from a #underline[device-centric] to a #alert[collective-centric] view of the system.]
+
+  #align(center)[#underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") as a way to define such applications.]
 ]
 
-// #slide(title: "Field Calculus")[
-//   The #underline[field] as a unifying abstraction for the #alert[field calculus] #fcite("DBLP:conf/forte/DamianiVPB15") is inspired by physical concepts.
-
-//   A *Field* is a mapping from each #underline[device] to some #underline[local value] $("dev" #math.arrow #math.bb("V"))$.
-
-//   Fields are built and manipulated using four *program constructs:*
-
-//   #v(1em)
-
-//   #side-by-side(columns: (auto, auto, auto, auto))[
-//     === Function
-//     ```
-     
-//     b(e1,...,en)
-     
-//     ```
-//   ][
-//     === State evolution
-//     ```
-//     rep(x <- v) {
-//       s1;...;sn
-//     }
-//     ```
-//   ][
-//     === Value propagation
-//     ```
-     
-//     nbr(s)
-     
-//     ```
-//   ][
-//     === Restriction
-//     ```
-//     if(e) {s1;...;sn}
-//     else {s1';...;sn'}
-     
-//     ```
-//   ]
-// ]
-
 #slide(title: "Self-org Computational Model")[
-  #alert[Behaviour:] _repeated_ execution with #underline[async rounds] \
-  #alert[Interaction:] _repeated_ *neighbours* #underline[messages exchange]
+  #alert[Behaviour]: _repeated_ execution with #underline[async rounds] \
+  #alert[Interaction]: _repeated_ *neighbours* #underline[messages exchange] \
+  #alert[Alignment]: each device execution is *aligned* with the others (program _AST_ alignment)
 
   #line(length: 100%, stroke: 0.05em + rgb("#23373b"))
 
   #only(1)[
     1. Receiving #alert[messages] from neighbours
-    #figure(image("images/ac-messages-perception.svg"))
+    #figure(image("images/ac-messages-perception.svg", width: 74%))
   ]
   #only(2)[
     2. Computation of the #alert[macro-program] against the received messages
-    #figure(image("images/ac-computation.svg"))
+    #figure(image("images/ac-computation.svg", width: 74%))
   ]
   #only(3)[
     3. Sending to neighbours the #alert[computed messages]
-    #figure(image("images/ac-messages-propagation.svg"))
+    #figure(image("images/ac-messages-propagation.svg", width: 74%))
   ]
   #only(4)[
     4. Sleep until next #alert[round]...
-    #figure(image("images/ac.svg"))
+    #figure(image("images/ac.svg", width: 74%))
+  ]
+]
+
+// Slide sul gradiente
+
+#slide(title: [Distributed gradient])[
+  #side-by-side(columns: (1fr, 1fr))[
+    ```scala
+    def gradient(source: Boolean): Int = 
+      rep(PositiveInfinity): distance =>
+        val dist = nbr(distance)
+        mux(source)(0)(1 + minHoodPlus(dist))
+    ```
+
+    This function computes the distance from a #alert[source]
+    device to all the other devices in the network.
+  ][
+    #only(1)[
+      #figure(image("images/gradient-1.svg"))
+    ]
+    #only(2)[
+      #figure(image("images/gradient-1b.svg"))
+    ]
+    #only(3)[
+      #figure(image("images/gradient-2.svg"))
+    ]
+    #only(4)[
+      #figure(image("images/gradient-2b.svg"))
+    ]
+    #only(5)[
+      #figure(image("images/gradient-3.svg"))
+    ]
+    #only(6)[
+      #figure(image("images/gradient-4.svg"))
+    ]
+    #only(7)[
+      #figure(image("images/gradient-4b.svg"))
+    ]
+    #only(8)[
+      #figure(image("images/gradient-5.svg"))
+    ]
+    #only(9)[
+      #figure(image("images/gradient-5b.svg"))
+    ]
+    #only(10)[
+      #figure(image("images/gradient-6.svg"))
+    ]
+  ]
+]
+
+#slide(title: [Distributed gradient])[
+  #side-by-side(columns: (1fr, 1fr))[
+    ```scala
+    def gradient(source: Boolean): Int = 
+      rep(PositiveInfinity): distance =>
+        val dist = nbr(distance)
+        mux(source)(0)(1 + minHoodPlus(dist))
+    ```
+
+    This function computes the distance from a #alert[source]
+    device to all the other devices in the network.
+
+    More complex *collective* components are built leveraging the #alert[gradient] function.
+  ][
+    #only(1)[
+      #figure(image("images/gradient-6b.svg"))
+    ]
+    #only(2)[
+      #figure(image("images/gradient-7.svg"))
+    ]
+    #only(3)[
+      #figure(image("images/gradient-7b.svg"))
+    ]
+    #only(4)[
+      #figure(image("images/gradient-8.svg"))
+    ]
+    #only(5)[
+      #figure(image("images/gradient-8b.svg"))
+    ]
   ]
 ]
 
@@ -166,16 +207,18 @@
     }
     ```
 
-    (_collective_) functions take *fields* as #alert[input] and return *field* as #alert[output].
+    Functions take *fields* as #alert[input] and return *field* as #alert[output].
   ][
     #figure(image("images/channel.svg", height: 50%))
   ]
 
-  #v(1em)
+  //#v(0.5em)
 
-  #align(center)[
+  #side-by-side(columns: (auto, auto), gutter: 2em)[
+    _Aggregate Computing_ provide us #alert[formal guarantees] on functional composition: reference for *deployment validation*.
+  ][
     The entire (_macro_-)program is executed by #alert[all the devices] in the network, \
-    assuming that each device *can* execute the program.
+    assuming that each device *should* execute #alert[all] the functions.
   ]
 ]
 
@@ -201,13 +244,13 @@
 #new-section-slide("Motivation")
 
 #slide(title: "Motivation")[
-  Traditionally, *AC* programs are deployed on #alert[each physical device] of the application.
+  *Collective* programs are deployed on #alert[each physical device] of the application.
   #side-by-side(columns: (2fr, auto), gutter: 1.5em)[
     Two main #underline[limitations]:
     1. *resource-constrained* devices cannot satisfy all the components' requirements
     2. available *infrastructure* is not exploited to its full potential (performance vs cost)
 
-    Previous work #fcite("FARABEGOLI2024") tried to partition the AC execution model but did not consider the *modularity* at the macro-program level.
+    Previous work #fcite("FARABEGOLI2024") tried to partition the _self-org/macroprogramming_ execution model but did not consider the *modularity* at the macro-program level.
   ][
     #figure(image("images/ac-monolithic-motivation.svg", height: 68%))
   ]
@@ -215,53 +258,55 @@
 
 #slide(title: "Different Service Requirements")[
   #figure((image("images/macro-program-requirements.svg", width: 70%)))
+  #v(1em)
+  #align(center)[Each component *may* requires multiple requirements to be execute.]
 ]
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
 
-#slide(title: "System model: physical system")[
-  / Physical system: network of #alert[physical devices] $#math.delta #math.in upright(bold("D"))_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $cal(N)_P$.
+// #slide(title: "System model: physical system")[
+//   / Physical system: network of #alert[physical devices] $#math.delta #math.in upright(bold("D"))_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $cal(N)_P$.
 
-  #figure(image("images/physical-system.svg", width: 73%))
-]
+//   #figure(image("images/physical-system.svg", width: 73%))
+// ]
 
-#slide(title: "System model: macro-program and application devices")[
-  / Application logic: it is captured by a #alert[macro-program] $mono("MP")$.
-  / Application devices: subset of the physical devices $upright(bold("D"))$ that execute the $mono("MP")$.
+// #slide(title: "System model: macro-program and application devices")[
+//   / Application logic: it is captured by a #alert[macro-program] $mono("MP")$.
+//   / Application devices: subset of the physical devices $upright(bold("D"))$ that execute the $mono("MP")$.
 
-  #only(1)[#figure(image("images/application-devices.svg", width: 73%))]
-  #only(2)[
-    #figure(image("images/application-devices-neighbourhood.svg", width: 73%))
+//   #only(1)[#figure(image("images/application-devices.svg", width: 73%))]
+//   #only(2)[
+//     #figure(image("images/application-devices-neighbourhood.svg", width: 73%))
 
-    #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $cal(N)_P$.]
-  ]
-]
+//     #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $cal(N)_P$.]
+//   ]
+// ]
 
-#slide(title: "System model: infrastructural devices")[
-  / Infrastructural devices: subset of the _physical devices_ $upright(bold("D"))_I #math.subset.eq upright(bold("D"))_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
+// #slide(title: "System model: infrastructural devices")[
+//   / Infrastructural devices: subset of the _physical devices_ $upright(bold("D"))_I #math.subset.eq upright(bold("D"))_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
 
-  #only(1)[#figure(image("images/infrastructural-devices.svg", width: 73%))]
-  #only(2)[
-    #figure(image("images/infrastructural-devices-hybrid.svg", width: 73%))
+//   #only(1)[#figure(image("images/infrastructural-devices.svg", width: 73%))]
+//   #only(2)[
+//     #figure(image("images/infrastructural-devices-hybrid.svg", width: 73%))
 
-    #align(center)[A _physical deivce_ can be both an #alert[application device] and an #alert[infrastructural device].]
-  ]
-]
+//     #align(center)[A _physical deivce_ can be both an #alert[application device] and an #alert[infrastructural device].]
+//   ]
+// ]
 
-#slide(title: "System model: sensors and actuators")[
-  / Sensors and actuators: a device is assumed to have #alert[sensors] and #alert[actuators] to interact with the local environment.
+// #slide(title: "System model: sensors and actuators")[
+//   / Sensors and actuators: a device is assumed to have #alert[sensors] and #alert[actuators] to interact with the local environment.
 
-  #figure(image("images/sensors-actuators.svg", width: 73%))
-]
+//   #figure(image("images/sensors-actuators.svg", width: 73%))
+// ]
 
 #slide(title: "Macro-programming Model")[
-  #side-by-side(columns: (2fr, 1fr), gutter: 1.5em)[
-    / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] --- $mono("MP")\(overline(mono("C")), overline(mono("B"))\)$
-    / Component: atomic functional macro-program taking a list of #alert[inputs] and producing an #alert[output] --- $mono("C")$
-    / Port: property of each _component_ through which the #alert[values] are received and produced (inputs and output of a function) --- $mono("p")$
-    / Binding: indicates that the #alert[output port] of a component is connected to the #alert[input port] of other components --- $italic("component")\(mono("p"), mono("C"), overline(mono("p")))$
+  #side-by-side(columns: (2.5fr, 1fr), gutter: 1.5em)[
+    / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] // --- $mono("MP")\(overline(mono("C")), overline(mono("B"))\)$
+    / Component: atomic functional macro-program taking a list of #alert[inputs] and producing an #alert[output] // --- $mono("C")$
+    / Port: property of each _component_ through which the #alert[values] are received and produced (inputs and output of a function) // --- $mono("p")$
+    / Binding: indicates that the #alert[output port] of a component is connected to the #alert[input port] of other components // --- $italic("component")\(mono("p"), mono("C"), overline(mono("p")))$
   ][
-    #figure(image("images/partitioned-macro-program.svg", width: 95%))
+    #figure(image("images/partitioned-macro-program.svg", width: 105%))
   ]
 ]
 
@@ -272,6 +317,13 @@
   ][
     #figure(image("images/collective-local-components.svg", height: 80%))
   ] 
+]
+
+#slide(title: "System model")[
+  / Application devices: devices executing the macro-program $mono("MP")$.
+  / Infrastructural devices: devices supporting the execution of some parts of the $mono("MP")$.
+
+  #figure(image("images/system-model.svg", width: 55%))
 ]
 
 #slide(title: "Application and deployment model")[
@@ -312,20 +364,20 @@
 
 #slide(title: "Deployment independence of self-stabilising computations")[
   #only(1)[
-    #theorem(number: "1", "Self-stabilisation")[
+    #theorem(number: "1", [Self-stabilisation #fcite("DBLP:journals/tomacs/ViroliABDP18")])[
       Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment], then, if:
 
       + all components implement #alert[self-stabilising] computation, and
       + sensor state is #alert[uniform] across all the #underline[forward chains]
 
-      then the result behaviour observed at the #underline[global output ports] is #alert[self-stabilising], independently from the #alert[deployment] (same result of the *monolithic* deployment).
+      then the result behaviour observed at the #underline[global output ports] is #alert[self-stabilising], and it is independently from the #alert[deployment] (same result of the *monolithic*).
     ]
   ]
   #only(2)[
     #proof("(base on operational semantics)")[
-      - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per #fcite("DBLP:journals/tomacs/ViroliABDP18")
+      - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per#super("4")
       - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
-      - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#super[4] of components
+      - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#fcite("DBLP:journals/tomacs/ViroliABDP18") of components
       - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travels from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
     ]
   ]
@@ -354,6 +406,10 @@
   1. *Gradient*: computation of the distances from a source to all the other devices // #fcite("DBLP:journals/computer/BealPV15")
   2. *SCR*: an implementation of the #alert[_self-organising coordination regions_] #fcite("DBLP:journals/fgcs/PianiniCVN21") pattern for splitting the network into sub-regions for handling problems in sub-spaces
   3. *Rescue scenario*: a city event scenario where people participate in the event and when an emergency occurs, a rescue team intervenes to help the people
+
+  // ==== Objective
+
+  Empirically prove #alert[functional equivalence] w.r.t. the *monolithic deployment*, and #alert[non-functional benefits] of the approach.
 ]
 
 #slide(title: "Results: gradient convergence")[
@@ -391,8 +447,8 @@
 
   *Future work*:
 
-   - Support #alert[dynamic] deployments and #alert[reconfiguration]
-   - Introduce #alert[capabilities] to constrain the components' execution
+  - Introduce #alert[capabilities] to constrain the components' execution
+   - Support #alert[dynamic] deployments and #alert[reconfiguration] (also with *AI* techniques)
    - Integrates the approach with tools like #alert[kubernetes] to achieve *real deployments*
    - Exploit the *FaaS* paradigm for components offloading and execution
 ]
