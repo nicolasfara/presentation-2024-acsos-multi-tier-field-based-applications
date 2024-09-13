@@ -347,15 +347,13 @@
 ]
 
 #slide(title: "Execution model: asyncronous round")[
-  #only(1)[
-    Each #underline[component] is #alert[independently executable].
-    
-    Its behaviour is organised in #alert[rounds].
-
-    #underline[Outputs] of rounds at each component generate #alert[message] to be shipped.
+    - Each #underline[component] is #alert[independently executable].
+    - Its behaviour is organised in #alert[rounds].
+    - #underline[Outputs] of rounds at each component generate #alert[message] to be shipped.
 
     #figure(image("images/message-propagation.svg", height: 52%))
-  ]
+
+    _Execution model_ *formalised* via #alert[operational semantics].
     // The #alert[main goals] of this execution model are (#underline[formalised in the paper]):
     // - #alert[deployment independent] macro-program specification
     // - #alert[self-stabilising] #fcite("DBLP:journals/tomacs/ViroliABDP18") property is preserved w.r.t. the "monolithic" deployment
