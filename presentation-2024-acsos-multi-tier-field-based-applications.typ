@@ -264,41 +264,6 @@
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
 
-// #slide(title: "System model: physical system")[
-//   / Physical system: network of #alert[physical devices] $#math.delta #math.in upright(bold("D"))_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $cal(N)_P$.
-
-//   #figure(image("images/physical-system.svg", width: 73%))
-// ]
-
-// #slide(title: "System model: macro-program and application devices")[
-//   / Application logic: it is captured by a #alert[macro-program] $mono("MP")$.
-//   / Application devices: subset of the physical devices $upright(bold("D"))$ that execute the $mono("MP")$.
-
-//   #only(1)[#figure(image("images/application-devices.svg", width: 73%))]
-//   #only(2)[
-//     #figure(image("images/application-devices-neighbourhood.svg", width: 73%))
-
-//     #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $cal(N)_P$.]
-//   ]
-// ]
-
-// #slide(title: "System model: infrastructural devices")[
-//   / Infrastructural devices: subset of the _physical devices_ $upright(bold("D"))_I #math.subset.eq upright(bold("D"))_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
-
-//   #only(1)[#figure(image("images/infrastructural-devices.svg", width: 73%))]
-//   #only(2)[
-//     #figure(image("images/infrastructural-devices-hybrid.svg", width: 73%))
-
-//     #align(center)[A _physical deivce_ can be both an #alert[application device] and an #alert[infrastructural device].]
-//   ]
-// ]
-
-// #slide(title: "System model: sensors and actuators")[
-//   / Sensors and actuators: a device is assumed to have #alert[sensors] and #alert[actuators] to interact with the local environment.
-
-//   #figure(image("images/sensors-actuators.svg", width: 73%))
-// ]
-
 #slide(title: "Macro-programming Model")[
   #side-by-side(columns: (2.5fr, 1fr), gutter: 1.5em)[
     / Macro-program: _direct acyclic graph_ (DAG) of #alert[components] // --- $mono("MP")\(overline(mono("C")), overline(mono("B"))\)$
@@ -455,4 +420,39 @@
 
 #slide[
   #bibliography("bibliography.bib")
+]
+
+#slide(title: "System model: physical system")[
+  / Physical system: network of #alert[physical devices] $#math.delta #math.in upright(bold("D"))_italic(P)$, exchanging messages according to #alert[physical neighbourhood] relation $cal(N)_P$.
+
+  #figure(image("images/physical-system.svg", width: 73%))
+]
+
+#slide(title: "System model: macro-program and application devices")[
+  / Application logic: it is captured by a #alert[macro-program] $mono("MP")$.
+  / Application devices: subset of the physical devices $upright(bold("D"))$ that execute the $mono("MP")$.
+
+  #only(1)[#figure(image("images/application-devices.svg", width: 73%))]
+  #only(2)[
+    #figure(image("images/application-devices-neighbourhood.svg", width: 73%))
+
+    #align(center)[The neighbouring relation of #alert[application devices] is a a #underline[subset] of $cal(N)_P$.]
+  ]
+]
+
+#slide(title: "System model: infrastructural devices")[
+  / Infrastructural devices: subset of the _physical devices_ $upright(bold("D"))_I #math.subset.eq upright(bold("D"))_P$ that #alert[can support execution] of some computation on behalf of some _application device_.
+
+  #only(1)[#figure(image("images/infrastructural-devices.svg", width: 73%))]
+  #only(2)[
+    #figure(image("images/infrastructural-devices-hybrid.svg", width: 73%))
+
+    #align(center)[A _physical deivce_ can be both an #alert[application device] and an #alert[infrastructural device].]
+  ]
+]
+
+#slide(title: "System model: sensors and actuators")[
+  / Sensors and actuators: a device is assumed to have #alert[sensors] and #alert[actuators] to interact with the local environment.
+
+  #figure(image("images/sensors-actuators.svg", width: 73%))
 ]
