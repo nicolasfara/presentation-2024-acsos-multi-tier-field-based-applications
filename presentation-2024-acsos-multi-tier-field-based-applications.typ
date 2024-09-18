@@ -261,7 +261,7 @@
 #slide(title: "Different Service Requirements")[
   #figure((image("images/macro-program-requirements.svg", width: 70%)))
   #v(1em)
-  #align(center)[Each component *may* requires multiple requirements to be executed.]
+  #align(center)[Each component *may* require multiple requirements to be executed.]
 ]
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
@@ -410,12 +410,14 @@
 
   We proved both #underline[formally] and #underline[empirically] that the proposed approach preserves the same #alert[functional] behaviour of the monolithic counterpart, showing #alert[non-functional] benefits.
 
-  *Future work*:
+  // *Future work*:
 
-  - Introduce #alert[capabilities] to constrain the components' execution
-  - Support #alert[dynamic] deployments and #alert[reconfiguration] (also with *AI* techniques)
-  - Integrates the approach with tools like #alert[kubernetes] to achieve *real deployments*
-  - Exploit the *FaaS* paradigm for components offloading and execution
+  #figure(image("images/future-works.svg"))
+
+  // - Introduce #alert[capabilities] to constrain the components' execution
+  // - Support #alert[dynamic] deployments and #alert[reconfiguration] (also with *AI* techniques)
+  // - Integrates the approach with tools like #alert[kubernetes] to achieve *real deployments*
+  // - Exploit the *FaaS* paradigm for components offloading and execution
 ]
 
 #focus-slide("Thank you!")
