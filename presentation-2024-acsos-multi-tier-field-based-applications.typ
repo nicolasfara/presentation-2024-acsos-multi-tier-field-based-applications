@@ -261,7 +261,7 @@
 #slide(title: "Different Service Requirements")[
   #figure((image("images/macro-program-requirements.svg", width: 70%)))
   #v(1em)
-  #align(center)[Each component *may* requires multiple requirements to be execute.]
+  #align(center)[Each component *may* requires multiple requirements to be executed.]
 ]
 
 #new-section-slide("Macro-components") // Qui, se troviamo un nome per l'approccio, lo mettiamo
