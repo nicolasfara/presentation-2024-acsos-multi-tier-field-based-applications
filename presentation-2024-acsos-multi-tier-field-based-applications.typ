@@ -418,7 +418,7 @@
   - Exploit the *FaaS* paradigm for components offloading and execution
 ]
 
-#focus-slide("Thank you for your attention!")
+#focus-slide("Thank you!")
 
 #slide[
   #bibliography("bibliography.bib")
