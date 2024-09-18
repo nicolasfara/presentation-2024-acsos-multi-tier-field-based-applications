@@ -122,8 +122,7 @@
     ```scala
     def gradient(source: Boolean): Int = 
       rep(PositiveInfinity): distance =>
-        val dist = nbr(distance)
-        mux(source)(0)(1 + minHoodPlus(dist))
+        mux(source)(0)(1 + minHood(nbr(distance)))
     ```
 
     This function computes the distance from a #alert[source]
@@ -169,8 +168,7 @@
     ```scala
     def gradient(source: Boolean): Int = 
       rep(PositiveInfinity): distance =>
-        val dist = nbr(distance)
-        mux(source)(0)(1 + minHoodPlus(dist))
+        mux(source)(0)(1 + minHood(nbr(distance)))
     ```
 
     This function computes the distance from a #alert[source]
