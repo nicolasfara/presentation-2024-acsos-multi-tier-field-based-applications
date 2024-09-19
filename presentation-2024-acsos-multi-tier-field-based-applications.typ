@@ -303,9 +303,9 @@
 
     // There may be conditions *preventing the execution* of the $#math.mono("C")^j_i$ component on the owner device (e.g., _lack sensor/actuators_, _computational capabilities_, ...).
 
-    Not all the $#math.mono("C")^j_i$ components *can be executed* by the $#math.delta _j$ device (e.g., _lack sensor/actuators_, _computational capabilities_, _non-functional requirements_, ...).
+    Not all the components *can be executed* by the #alert[application device] (e.g., _lack sensor/actuators_, _computational capabilities_, _non-functional requirements_, ...).
 
-    In such cases, the $#math.mono("C")^j_i$ is offloaded to an *infrastructural device* (#alert[surrogate]).
+    In such cases, the _component_ is offloaded to an *infrastructural device* (#alert[surrogate]).
   ][
     #figure(image("images/offloading-surrogate.svg", height: 75%))
   ]
