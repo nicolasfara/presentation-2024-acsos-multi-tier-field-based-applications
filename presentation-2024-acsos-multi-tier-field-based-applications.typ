@@ -229,8 +229,12 @@
     #v(1em)
 
     We must deal with different #alert[capabilities] and #alert[constraints]:
-    - edge devices for #underline[sense/acting], but *resources-constrained*
-    - cloud instances for #underline[scalability], but *latency/privacy* issues
+    - #alert[edge devices]:
+      - used for #underline[sensing/acting] over the (physical) environment
+      - but they are typically *resources-constrained*
+    - #alert[cloud instances]:
+      - offer #underline[scalability] and #underline[computational power]
+      - but introduce *latency/privacy* issues
   ][
     #figure(image("images/edge-cloud-continuum.svg", height: 80%))
   ]
